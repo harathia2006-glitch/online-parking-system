@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Parking Slot</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            padding:20px;
+        }
+
+        .container{
+            width:550px;
+            background:#fff;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+        }
+
+        h2{
+            text-align:center;
+            color:#0d47a1;
+            margin-bottom:20px;
+        }
+
+        label{
+            font-weight:bold;
+            color:#333;
+        }
+
+        input, select{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:15px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:15px;
+        }
+
+        input:focus, select:focus{
+            border:2px solid #2196f3;
+            outline:none;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-bottom:20px;
+        }
+
+        table th{
+            background:#0d47a1;
+            color:white;
+            padding:10px;
+        }
+
+        table td{
+            border:1px solid #ddd;
+            padding:8px;
+            text-align:center;
+        }
+
+        .btn{
+            width:100%;
+            padding:12px;
+            background:#28a745;
+            color:white;
+            font-size:18px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        .btn:hover{
+            background:#1e7e34;
+        }
+
+        .home-btn{
+            width:100%;
+            margin-top:10px;
+            padding:12px;
+            background:#ff9800;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        .home-btn:hover{
+            background:#ef6c00;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🚗 Smart Parking Slot Booking</h2>
+
+    <form action="/book" method="POST">
+
+        <label>Customer Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" name="mobile" placeholder="Enter mobile number" required>
+
+        <label>Vehicle Number</label>
+        <input type="text" name="vehicle" placeholder="AP39XX1234" required>
+
+        <label>Vehicle Type</label>
+        <select name="vehicle_type" required>
+            <option value="">Select Vehicle</option>
+            <option>Car</option>
+            <option>Bike</option>
+            <option>SUV</option>
+            <option>Electric Car</option>
+        </select>
+
+        <label>Select Shopping Mall</label>
+        <select name="mall" required>
+            <option value="">Choose Mall</option>
+            <option>Reliance Mall</option>
+            <option>DMart</option>
+            <option>PVR Mall</option>
+            <option>More Super Market</option>
+        </select>
+
+        <h3 style="text-align:center;color:#0d47a1;margin-bottom:10px;">
+            Available Parking Slots
+        </h3>
+
+        <table>
+            <tr>
+                <th>Shopping Mall</th>
+                <th>Total Slots</th>
+                <th>Available Slots</th>
+            </tr>
+
+            <tr>
+                <td>Reliance Mall</td>
+                <td>100</td>
+                <td style="color:green;"><b>25</b></td>
+            </tr>
+
+            <tr>
+                <td>DMart</td>
+                <td>80</td>
+                <td style="color:green;"><b>18</b></td>
+            </tr>
+
+            <tr>
+                <td>PVR Mall</td>
+                <td>60</td>
+                <td style="color:green;"><b>12</b></td>
+            </tr>
+
+            <tr>
+                <td>More Super Market</td>
+                <td>50</td>
+                <td style="color:red;"><b>5</b></td>
+            </tr>
+        </table>
+
+        <label>Booking Date</label>
+        <input type="date" name="date" required>
+
+        <label>Entry Time</label>
+        <input type="time" name="entry_time" required>
+
+        <label>Exit Time</label>
+        <input type="time" name="exit_time" required>
+
+        <button type="submit" class="btn">
+            🚗 Book Parking Slot
+        </button>
+
+    </form>
+
+    <button class="home-btn" onclick="window.location.href='/'">
+        🏠 Back to Home
+    </button>
+
+</div>
+
+</body>
+</html>

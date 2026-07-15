@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Parking System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:500px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0px 0px 20px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+h2{
+    color:#ff6600;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:18px;
+    color:#444;
+    margin-bottom:30px;
+}
+
+button{
+    width:260px;
+    padding:15px;
+    margin:10px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    color:white;
+    cursor:pointer;
+}
+
+.book{
+    background:#28a745;
+}
+
+.book:hover{
+    background:#1e7e34;
+}
+
+.view{
+    background:#007bff;
+}
+
+.view:hover{
+    background:#0056b3;
+}
+
+.dashboard{
+    background:#6f42c1;
+}
+
+.dashboard:hover{
+    background:#59359c;
+}
+
+.exit{
+    background:#dc3545;
+}
+
+.exit:hover{
+    background:#b52a37;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚗 Smart Parking System</h1>
+
+<h2>Welcome to Smart Parking System</h2>
+
+<p>
+Book your parking slot quickly and view available parking slots in different shopping malls.
+</p>
+
+<a href="/booking">
+<button class="book">
+🚗 Book Parking Slot
+</button>
+</a>
+
+<br>
+
+<a href="/view_slots">
+<button class="view">
+📋 View Booking Slots
+</button>
+</a>
+
+<br>
+
+<a href="/dashboard">
+<button class="dashboard">
+📊 Dashboard
+</button>
+</a>
+
+<br>
+
+<button class="exit" onclick="alert('Thank You For Visiting Smart Parking System')">
+❌ Exit
+</button>
+
+</div>
+
+</body>
+</html>

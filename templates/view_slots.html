@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Parking Slots</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.container{
+    width:95%;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0px 0px 20px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#0d47a1;
+    color:white;
+    padding:12px;
+}
+
+table td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+tr:hover{
+    background:#d9f5ff;
+}
+
+.status{
+    color:red;
+    font-weight:bold;
+}
+
+.slot{
+    color:green;
+    font-weight:bold;
+}
+
+.buttons{
+    text-align:center;
+    margin-top:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 20px;
+    margin:8px;
+    text-decoration:none;
+    color:white;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.home{
+    background:#0d47a1;
+}
+
+.dashboard{
+    background:#ff9800;
+}
+
+.book{
+    background:#28a745;
+}
+
+.btn:hover{
+    opacity:0.9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚗 View Booked Parking Slots</h1>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Customer Name</th>
+<th>Mobile Number</th>
+<th>Vehicle Number</th>
+<th>Vehicle Type</th>
+<th>Shopping Mall</th>
+<th>Date</th>
+<th>Entry Time</th>
+<th>Exit Time</th>
+<th>Parking Slot</th>
+<th>Status</th>
+</tr>
+
+{% for booking in bookings %}
+
+<tr>
+
+<td>{{ booking[0] }}</td>
+<td>{{ booking[1] }}</td>
+<td>{{ booking[2] }}</td>
+<td>{{ booking[3] }}</td>
+<td>{{ booking[4] }}</td>
+<td>{{ booking[5] }}</td>
+<td>{{ booking[6] }}</td>
+<td>{{ booking[7] }}</td>
+<td>{{ booking[8] }}</td>
+
+<td class="slot">
+{{ booking[9] }}
+</td>
+
+<td class="status">
+Occupied
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="buttons">
+
+<a href="/">
+<button class="btn home">
+🏠 Home
+</button>
+</a>
+
+<a href="/booking">
+<button class="btn book">
+🚗 Book Parking
+</button>
+</a>
+
+<a href="/dashboard">
+<button class="btn dashboard">
+📊 Dashboard
+</button>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
